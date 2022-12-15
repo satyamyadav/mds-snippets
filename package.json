@@ -2,7 +2,7 @@
 	"name": "mds-snippets",
 	"displayName": "MDS snippets",
 	"description": "Masala Design System VSCode snippets",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "mds-dev",
 	"repository": {},
 	"engines": {

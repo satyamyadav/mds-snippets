@@ -1,0 +1,112 @@
+const defaultLib = {
+  "Avatar": true,
+  "AvatarGroup": true,
+  "Backdrop": true,
+  "Badge": true,
+  "Breadcrumbs": true,
+  "Button": true,
+  "Calendar": true,
+  "Caption": true,
+  "Card": true,
+  "CardBody": true,
+  "CardFooter": true,
+  "CardHeader": true,
+  "CardSubdued": true,
+  "ChatMessage": true,
+  "Checkbox": true,
+  "Chip": true,
+  "ChipGroup": true,
+  "ChipInput": true,
+  "ChoiceList": true,
+  "Collapsible": true,
+  "Column": true,
+  "DatePicker": true,
+  "DateRangePicker": true,
+  "Dialog": true,
+  "Divider": true,
+  "Dropdown": true,
+  "Dropzone": true,
+  "EditableChipInput": true,
+  "EditableDropdown": true,
+  "EditableInput": true,
+  "EmptyState": true,
+  "FileList": true,
+  "FileUploader": true,
+  "FileUploaderList": true,
+  "FullscreenModal": true,
+  "Grid": true,
+  "GridCell": true,
+  "Heading": true,
+  "HelpText": true,
+  "HorizontalNav": true,
+  "Icon": true,
+  "InlineMessage": true,
+  "Input": true,
+  "InputMask": true,
+  "Label": true,
+  "Legend": true,
+  "Link": true,
+  "List": true,
+  "Message": true,
+  "MetaList": true,
+  "MetricInput": true,
+  "Modal": true,
+  "ModalBody": true,
+  "ModalDescription": true,
+  "ModalFooter": true,
+  "ModalHeader": true,
+  "MultiSlider": true,
+  "Navigation": true,
+  "OutsideClick": true,
+  "PageHeader": true,
+  "Pagination": true,
+  "Paragraph": true,
+  "Pills": true,
+  "Placeholder": true,
+  "PlaceholderImage": true,
+  "PlaceholderParagraph": true,
+  "Popover": true,
+  "ProgressBar": true,
+  "ProgressRing": true,
+  "Radio": true,
+  "RangeSlider": true,
+  "Row": true,
+  "Sidesheet": true,
+  "Slider": true,
+  "Spinner": true,
+  "StatusHint": true,
+  "Stepper": true,
+  "Subheading": true,
+  "Switch": true,
+  "Tab": true,
+  "Table": true,
+  "Tabs": true,
+  "TabsWrapper": true,
+  "Text": true,
+  "Textarea": true,
+  "TimePicker": true,
+  "Toast": true,
+  "Tooltip": true,
+  "Utils": true,
+  "VerificationCodeInput": true,
+  "VerticalNav": true,
+  "version": true
+}
+
+const generateImports = (str = '', lib = defaultLib, libName) => {
+  const regexp = /<[A-Z]\w*/g;
+  const matchedArray = Array.from(str.matchAll(regexp));
+
+  const componentsMap = matchedArray
+    .flatMap((item) => item[0].replace('<', ''))
+    .reduce((finalMap, currentElement) => {
+      if (lib[currentElement]) {
+        return { ...finalMap, [currentElement]: true };
+      }
+      return finalMap;
+    }, {});
+
+  return `import { ${Object.keys(componentsMap).join(', ')} } from '${libName}';`;
+};
+
+module.exports = generateImports;

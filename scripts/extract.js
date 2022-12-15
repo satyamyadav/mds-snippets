@@ -1,6 +1,7 @@
 const path = require('path');
 const { writeFile } = require('fs-extra');
 const puppeteerCore = require('puppeteer-core');
+const generateImports = require('./generateImports');
 
 const STORYBOOK_HOST = process.env.STORYBOOK_HOST || "http://mds.innovaccer.com/iframe.html?id=components-avatargroup-all--all&args=&viewMode=story"
 
@@ -53,6 +54,12 @@ function convert(componentData) {
     const storyTitle = componentData.title.replace(/\//g, ' ').replace('Variants', ' ').replace('Components', ' ').trim();
     const name = title || storyTitle;
 
+    const importString = generateImports(jsxCode, undefined, '@innovaccer/design-system');
+
+    const jsx = `${importString}
+    ${jsxCode}
+    `
+
     if(!name) {
 
         console.log(name, componentData.title);
@@ -62,7 +69,7 @@ function convert(componentData) {
         [name]: {
             prefix: name,
             description: componentData.story,
-            body: [jsxCode]
+            body: [jsx]
         }
     }
 

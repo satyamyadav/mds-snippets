@@ -1,0 +1,41 @@
+{
+	"name": "mds-snippets",
+	"displayName": "MDS snippets",
+	"description": "Masala Design System VSCode snippets",
+	"version": "0.0.1",
+	"publisher": "mds-dev",
+	"repository": {},
+	"engines": {
+		"vscode": "^1.28.0"
+	},
+	"scripts": {
+		"package": "vsce package",
+		"install": "code --install-extension mds-snippets-0.0.1.vsix"
+	},
+	"devDependencies": {
+		"@vscode/vsce": "2.15.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./javascript.json"
+			},
+			{
+				"language": "typescript",
+				"path": "./javascript.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./javascript.json"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./javascript.json"
+			}
+		]
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"avatar": {
+		"prefix": "avatar",
+		"body": [
+			"<Avatar appearance=\"primary\" firstName=\"John\" lastName=\"Doe\" size=\"tiny\" />"
+		],
+		"description": "add avatar component"
+	},
+	"button": {
+		"prefix": "button",
+		"body": [
+			"<Button appearance=\"basic\" aria-label=\"Open\" iconAlign=\"right\" onClick={function(){}} onMouseEnter={function(){}} onMouseLeave={function(){}} size=\"large\" type=\"button\">",
+			"      Open",
+			"    </Button>"
+		],
+		"description": "button"
+	},
+	"with disabled state": {
+		"prefix": "Calendar",
+		"body": [
+			"<div className=\"mt-8\">",
+			"        <Heading>",
+			"          size: small",
+			"        </Heading>",
+			"        <div className=\"d-flex\">",
+			"          <div className=\"mr-8\">",
+			"            <Card className=\"d-inline-flex\" shadow=\"light\">",
+			"              <Calendar date={new Date(\"2020-03-14T18:30:00.000Z\")} size=\"small\" />",
+			"            </Card>",
+			"          </div>",
+			"        </div>",
+			"      </div>"
+		],
+		"description": "with disabled state"
+	}
+}

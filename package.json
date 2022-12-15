@@ -10,10 +10,13 @@
 	},
 	"scripts": {
 		"package": "vsce package",
-		"install": "code --install-extension mds-snippets-0.0.1.vsix"
+		"install:plugin": "code --install-extension mds-snippets-0.0.1.vsix",
+		"extract": " node ./scripts/extract.js"
 	},
 	"devDependencies": {
-		"@vscode/vsce": "2.15.0"
+		"@vscode/vsce": "2.15.0",
+		"fs-extra": "10.0.0",
+		"puppeteer-core": "10.2.0"
 	},
 	"categories": [
 		"Snippets"

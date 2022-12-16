@@ -10,6 +10,13 @@
 This is repo contains the source code for the code snippet and the package.
 Cuurently the snippets are in Javascript only. TS snippets to be added later on.
 
+### Demo 
+
+<p align="center">
+  <a href="#">
+    <img alt="" src="demo.gif" width="100%" />
+  </a>
+</p>
 
 
 ## Installation
@@ -17,12 +24,12 @@ Currently this extension is not on the VSCode marketplace and can be installed f
 
 ### curl
 ```bash
-curl -o mds-snippets.vsix  https://raw.githubusercontent.com/satyamyadav/mds-snippets/main/mds-snippets-0.0.2.vsix |  code --install-extension mds-snippets.vsix
+curl -o mds-snippets.vsix  https://raw.githubusercontent.com/satyamyadav/mds-snippets/main/mds-snippets-0.0.2.vsix |  code --install-extension mds-snippets.vsix && rm mds-snippets.vsix
 ```
 
 ### wget
 ```bash
-wget https://raw.githubusercontent.com/satyamyadav/mds-snippets/main/mds-snippets-0.0.2.vsix &&  code --install-extension mds-snippets-0.0.2.vsix
+wget https://raw.githubusercontent.com/satyamyadav/mds-snippets/main/mds-snippets-0.0.2.vsix &&  code --install-extension mds-snippets-0.0.2.vsix && rm mds-snippets-0.0.2.vsix
 ```
 
 ### local file
